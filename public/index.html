@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>
+    <script>
+        async function sendRequest()
+        {
+            const a=document.getElementById("num1").value;
+            const b=document.getElementById("num2").value;
+            const response=await axios.post("http://localhost:3000/sum",{a:a,b:b})
+            console.log(response.ans);
+        }
+    </script>
+</head>
+<body>
+    <p>Enter first Number <input type="number " name="" id="num1"></p><br>
+    <p>Enter Second Number <input type="number " name="" id="num2"></p>
+    <button  onclick="sendRequest()">Find Sum</button>
+    <div id ="divi"></div>
+</body>
+
+</html>
